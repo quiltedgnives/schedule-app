@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
-import { AuthConsumer } from "../providers/AuthProvider";
+import { AuthConsumer } from "../../providers/AuthProvider";
 
 const AdminRoute = ({ component: Component, ...rest }) => (
   <AuthConsumer>

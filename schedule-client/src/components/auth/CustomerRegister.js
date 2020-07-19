@@ -3,27 +3,33 @@ import { AuthConsumer } from "../../providers/AuthProvider";
 import { Button, Form, Segment, Header, Grid, Message } from 'semantic-ui-react';
 import { Link } from 'react-router-dom/';
 
-class Login extends Component {
-  state = { email: '', password: '' }
+class CustomerRegister extends Component {
+  state = { email: '', password: '', passwordConfirmation: '' };
   
   handleSubmit = (e) => {
     e.preventDefault();
-    const { email, password } = this.state;
-    this.props.auth.handleLogin({ email, password }, this.props.history);
+    const { email, password, passwordConfirmation } = this.state;
+    const { auth: { handleRegister }, history } = this.props;
+
+    if (password === passwordConfirmation)
+      handleRegister({ email, password, passwordConfirmation }, history);
+    else
+      alert('Passwords Do Not Match!')
   }
   
   handleChange = (e) => {
     const { name, value } = e.target;
     this.setState({ [name]: value });
   }
-
+  
   render() {
-    const { email, password } = this.state;
+    const { email, password, passwordConfirmation } = this.state;
+    
     return (
       <Grid textAlign='center' style={{ height: '80vh' }} verticalAlign='middle'>
         <Grid.Column style={{ maxWidth: 450 }}>
           <Header as='h2' textAlign='center'>
-            Log-in
+            Register
           </Header>
           <Form onSubmit={this.handleSubmit} size='large'>
             <Segment stacked>
@@ -49,11 +55,22 @@ class Login extends Component {
                 icon='lock'
                 iconPosition='left'
               />
-              <Button primary type='submit' fluid size='large'>Login</Button>
+              <Form.Input
+                required
+                name='passwordConfirmation'
+                value={passwordConfirmation}
+                placeholder='Password Confirmation'
+                type='password'
+                onChange={this.handleChange}
+                fluid
+                icon='lock'
+                iconPosition='left'
+              />
+              <Button primary type='submit' fluid size='large'>Register</Button>
             </Segment>
           </Form>
           <Message>
-            New to us? <Link to='/register'>Sign Up</Link>
+            Already A User? <Link to='/login'>Login</Link>
           </Message>
         </Grid.Column>
       </Grid>
@@ -61,11 +78,11 @@ class Login extends Component {
   }
 }
 
-export default class ConnectedLogin extends Component {
+export default class ConnectedRegister extends Component {
   render() {
     return (
       <AuthConsumer>
-        { auth => <Login {...this.props} auth={auth} />}
+        { auth => <CustomerRegister { ...this.props } auth={auth} /> }
       </AuthConsumer>
     )
   }

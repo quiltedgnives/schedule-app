@@ -1,46 +1,56 @@
 import React, { Component } from 'react'
-import { AuthConsumer } from "../providers/AuthProvider";
-import { Link, withRouter } from 'react-router-dom'
+import { AuthConsumer } from "../../providers/AuthProvider";
+import { Link, withRouter } from 'react-router-dom';
+import { Menu } from 'semantic-ui-react';
 
 class Navbar extends Component {
   
   rightNavItems = () => {
-    const { auth: { user, handleLogout } } = this.props;
+    const { auth: { user, handleLogout }, location } = this.props;
     
     if (user) {
       return (
-        <>
-          <li
+        <Menu.Menu position='right'>
+          <Menu.Item
+            name='logout'
             onClick={ () => handleLogout(this.props.history) }
-          >
-            Logout
-          </li>
-        </>
+          />
+        </Menu.Menu>
       )
     } else {
       return (
-        <>
+        <Menu.Menu position='right'>
           <Link to='/login'>
-            <li>Login</li>
+            <Menu.Item
+              id='login'
+              name='login'
+              active={location.pathname === '/login'}
+            />
           </Link>
           <Link to='/register'>
-            <li>Register</li>
+            <Menu.Item
+              id='register'
+              name='register'
+              active={location.pathname === '/register'}
+            />
           </Link>
-        </>
+        </Menu.Menu>
       )
     }
   }
   
   render() {
     return (
-      <div>
-        <ul>
-          <Link to='/'>
-            <li>Home</li>
-          </Link>
-            { this.rightNavItems() }
-        </ul>
-      </div>
+      <Menu pointing secondary>
+        <Link to='/'>
+          <Menu.Item
+            name='home'
+            id='home'
+            active={this.props.location.pathname === '/'}
+          />
+        </Link>
+          { this.rightNavItems() }
+      </Menu>
     )
   }
 }

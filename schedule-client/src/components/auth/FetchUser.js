@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { AuthConsumer } from "../providers/AuthProvider";
+import { AuthConsumer } from "../../providers/AuthProvider";
 
 class FetchUser extends Component {
   state = { loaded: false };
