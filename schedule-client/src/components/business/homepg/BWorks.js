@@ -6,7 +6,7 @@ const BWorks = () => (
   <BWorksWrapper>
     <SectionTitle>How It Works</SectionTitle>
     <Step.Group style={{ marginTop: '50px' }}>
-      <Step style={{ height: '250px' }}>
+      <Step style={{ height: '250px', width: '375px' }}>
         <Step.Content>
           <StepIcon name='clipboard outline' size='huge' />
           <Step.Title>Sign Up</Step.Title>
@@ -14,7 +14,7 @@ const BWorks = () => (
         </Step.Content>
       </Step>
 
-      <Step active style={{ height: '250px' }}>
+      <Step active style={{ height: '250px', width: '375px' }}>
         <Step.Content>
           <StepIcon name='calendar alternate outline' size='huge' />
           <Step.Title>Appointments</Step.Title>
@@ -22,7 +22,7 @@ const BWorks = () => (
         </Step.Content>
       </Step>
 
-      <Step style={{ height: '250px' }}>
+      <Step style={{ height: '250px', width: '375px' }}>
         <Step.Content>
           <StepIcon name='payment' size='huge'/>
           <Step.Title>Payment</Step.Title>
