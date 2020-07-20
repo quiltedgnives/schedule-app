@@ -17,7 +17,7 @@ const BWorks = () => (
       <Step active style={{ height: '250px', width: '375px' }}>
         <Step.Content>
           <StepIcon name='calendar alternate outline' size='huge' />
-          <Step.Title>Appointments</Step.Title>
+          <Step.Title style={{ color: '#343434' }}>Appointments</Step.Title>
           <Step.Description>Create and fullfill appointments</Step.Description>
         </Step.Content>
       </Step>
