@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Icon } from 'semantic-ui-react';
 
 export const HeaderP = styled.p`
   font-size: 18px;
@@ -15,7 +16,7 @@ export const BHeaderContainer = styled.div`
   color: #4A4A4A;
 `
 
-export const TeamTitle = styled.h1`
+export const SectionTitle = styled.h1`
   font-family: Montserrat;
   font-size: 40px;
   font-weight: 900;
@@ -54,4 +55,17 @@ export const TeamP = styled.p`
   font-weight: 400;
   margin-top: 40px;
   margin-bottom: 30px;
+`
+
+export const BWorksWrapper = styled.div`
+  font-family: Montserrat;
+  text-align: center;
+  background: #e6e6e6;
+  color: #4A4A4A;
+  height: 500px;
+  padding: 5px;
+`
+
+export const StepIcon = styled(Icon)`
+  margin-bottom: 20px !important;
 `
