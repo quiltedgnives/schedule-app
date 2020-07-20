@@ -8,11 +8,11 @@ class Register extends Component {
   
   handleSubmit = (e) => {
     e.preventDefault();
-    const { email, password, passwordConfirmation } = this.state;
+    const {  password, passwordConfirmation } = this.state;
     const { auth: { handleRegister }, history } = this.props;
 
     if (password === passwordConfirmation)
-      handleRegister({ email, password, passwordConfirmation }, history);
+      handleRegister(this.state, history);
     else
       alert('Passwords Do Not Match!')
   }

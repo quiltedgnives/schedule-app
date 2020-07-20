@@ -14,6 +14,7 @@ import Navbar from './components/shared/Navbar';
 import Bdash from './components/business/businessDash/BDash';
 import CustomerRegister from './components/auth/CustomerRegister';
 import { Container } from 'semantic-ui-react';
+import ThankYouPg from './components/shared/ThankYouPg';
 
 const App = () => (
   <>  
@@ -30,6 +31,7 @@ const App = () => (
           <Route exact path="/register" component={Register} />
           <Route exact path="/help" component={Help} />
           <Route exact path="/:business_id/register" component={CustomerRegister} />
+          <Route exact path='/thank-you' component={ThankYouPg} />
           <Route component={NoMatch} />
         </Switch>
       </Container>
