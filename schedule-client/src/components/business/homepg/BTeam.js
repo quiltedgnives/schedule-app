@@ -1,13 +1,14 @@
 import React from 'react';
-import { Header, Grid } from 'semantic-ui-react';
+import { Grid, Container } from 'semantic-ui-react';
 import BMember from './BMember';
 import { members } from './BMembers';
+import { TeamTitle, TeamSubTitle } from '../../../styled-components/homeStyles';
 
 const BTeam = () => (
-  <>
-    <Header textAlign='center'>Our Team</Header>
-    <p>Bacon ipsum dolor amet alcatra cupim leberkas kevin</p>
-    <Grid columns={2}>
+  <Container>
+    <TeamTitle>OUR TEAM</TeamTitle>
+    <TeamSubTitle>Bacon ipsum dolor amet alcatra cupim leberkas kevin</TeamSubTitle>
+    <Grid columns={2} stackable>
       {
         members.map( m => 
           <Grid.Column>
@@ -16,7 +17,7 @@ const BTeam = () => (
         ) 
       }
     </Grid>
-  </>
+  </Container>
 )
 
 export default BTeam;
