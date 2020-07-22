@@ -1,11 +1,11 @@
 import React from 'react';
-import { Grid, Image, Icon } from 'semantic-ui-react';
-import { TeamHead, TeamSubHead, TeamP } from '../../../styled-components/homeStyles';
+import { Grid, Icon } from 'semantic-ui-react';
+import { TeamHead, TeamSubHead, TeamP, TeamImg } from '../../../styled-components/homeStyles';
 
 const BMember = ({ img, name, title, txt, fb, li, gh }) => (
   <Grid columns={2} stackable>
     <Grid.Column>
-      <Image src={img} size='medium' circular verticalAlign='top' />
+      <TeamImg src={img} size='medium' circular verticalAlign='top' width='260px' height='260px' />
     </Grid.Column>
     <Grid.Column>
       <TeamHead>{name}</TeamHead>

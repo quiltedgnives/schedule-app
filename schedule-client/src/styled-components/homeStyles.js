@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Icon } from 'semantic-ui-react';
+import { Icon, Image } from 'semantic-ui-react';
 
 export const HeaderP = styled.p`
   font-size: 18px;
@@ -55,6 +55,10 @@ export const TeamP = styled.p`
   font-weight: 400;
   margin-top: 40px;
   margin-bottom: 30px;
+`
+export const TeamImg = styled(Image)`
+  width: 260px !important;
+  height: 260px !important;
 `
 
 export const BWorksWrapper = styled.div`

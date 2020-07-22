@@ -17,6 +17,9 @@ const BTeam = () => (
         ) 
       }
     </Grid>
+    <br />
+    <br />
+    <br />
   </Container>
 )
 
