@@ -6,6 +6,8 @@ import AuthProvider from './providers/AuthProvider';
 import { initMiddleware } from 'devise-axios';
 import 'semantic-ui-css/semantic.min.css';
 import ContactProvider from './providers/ContactProvider';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 initMiddleware();
 
