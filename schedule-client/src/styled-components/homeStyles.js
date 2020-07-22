@@ -73,3 +73,17 @@ export const BWorksWrapper = styled.div`
 export const StepIcon = styled(Icon)`
   margin-bottom: 20px !important;
 `
+
+export const BTestWrapper = styled.div`
+  height: 500px;
+  background: cornflowerblue;
+  padding-top: 50px;
+  color: white;
+  font-family: Montserrat;
+  font-size: 18px;
+`
+
+export const BTestAuthor = styled.span`
+  margin-top: 20px;
+  padding-left: 240px;
+`
