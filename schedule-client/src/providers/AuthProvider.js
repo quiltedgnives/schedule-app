@@ -13,9 +13,9 @@ class AuthProvider extends Component {
         this.setState({ user: res.data.data, });
         history.push("/");
       })
-    .catch( res => {
-      console.log(res);
-    })
+      .catch( res => {
+        console.log(res);
+      })
   }
   
   handleLogin = (user, history) => {

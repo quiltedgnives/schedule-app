@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import BHome from './components/business/homepg/BHome';
-import Contact from './components/business/Contact';
+import Contact from './components/business/contact/Contact';
 import CHome from './components/customer/homepg/CHome';
 import NoMatch from './components/shared/NoMatch';
 import Help from './components/shared/Help';
