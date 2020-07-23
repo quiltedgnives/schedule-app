@@ -1,9 +1,9 @@
 import React from 'react';
 import { Grid, Icon } from 'semantic-ui-react';
-import { TeamHead, TeamSubHead, TeamP, TeamImg } from '../../../styled-components/homeStyles';
+import { TeamHead, TeamSubHead, TeamP, TeamImg, BMemberWrapper } from '../../../styled-components/homeStyles';
 
 const BMember = ({ img, name, title, txt, fb, li, gh }) => (
-  <Grid columns={2} stackable>
+  <BMemberWrapper columns={2} stackable>
     <Grid.Column>
       <TeamImg src={img} size='medium' circular verticalAlign='top' width='260px' height='260px' />
     </Grid.Column>
@@ -23,7 +23,7 @@ const BMember = ({ img, name, title, txt, fb, li, gh }) => (
         </a>
       </div>
     </Grid.Column>
-  </Grid>
+  </BMemberWrapper>
 )
 
 export default BMember;

@@ -13,6 +13,7 @@ const BTeam = () => (
         members.map( m => 
           <Grid.Column>
             <BMember {...m} />
+            <br />
           </Grid.Column>
         ) 
       }

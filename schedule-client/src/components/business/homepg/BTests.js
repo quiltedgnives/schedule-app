@@ -1,7 +1,7 @@
 import React from 'react';
 import Slider from 'react-slick';
 import { Container, Grid, Image, Icon } from 'semantic-ui-react';
-import { BTestWrapper, BTestAuthor } from '../../../styled-components/homeStyles';
+import { BTestWrapper, BTestAuthor, TestSlider, BTestP } from '../../../styled-components/homeStyles';
 
 const settings = {
   dots: true,
@@ -16,56 +16,56 @@ const settings = {
 const BTests = () => (
   <BTestWrapper>
     <Container>
-      <Slider {...settings} style={{ width: '800px', margin: '0 auto', height: '300px', padding: '60px 30px'}}>
+      <TestSlider {...settings}>
         <div>
-          <Grid>
+          <Grid stackable>
             <Grid.Column width={2}>
               <Icon name='quote left' size='huge' />
             </Grid.Column>
             <Grid.Column width={4} style={{ margin: '50px 0' }}>
-              <Image src='https://wtwp.com/wp-content/uploads/2015/06/placeholder-image.png' size='small' />
+              <Image src='https://wtwp.com/wp-content/uploads/2015/06/placeholder-image.png' size='small' style={{ margin: '0 auto' }} />
             </Grid.Column>
             <Grid.Column width={10} style={{ margin: '50px 0' }}>
-              <p>
+              <BTestP>
                 "Bacon ipsum dolor amet alcatra cupim leberkas kevin, pork chop pork belly corned beef sirloin."
-              </p>
-              <BTestAuthor>Bob B. - MyGToBarber</BTestAuthor>
+              </BTestP>
+              <BTestAuthor>Bob A. - MyGToBarber</BTestAuthor>
             </Grid.Column>
           </Grid>
         </div>
         <div>
-          <Grid>
+          <Grid stackable>
             <Grid.Column width={2}>
               <Icon name='quote left' size='huge' />
             </Grid.Column>
             <Grid.Column width={4} style={{ margin: '50px 0' }}>
-              <Image src='https://wtwp.com/wp-content/uploads/2015/06/placeholder-image.png' size='small' />
+              <Image src='https://wtwp.com/wp-content/uploads/2015/06/placeholder-image.png' size='small' style={{ margin: '0 auto' }} />
             </Grid.Column>
             <Grid.Column width={10} style={{ margin: '50px 0' }}>
-              <p>
+              <BTestP>
                 "Bacon ipsum dolor amet alcatra cupim leberkas kevin, pork chop pork belly corned beef sirloin."
-              </p>
-              <BTestAuthor>Bob B. - MyGToBarber</BTestAuthor>
+              </BTestP>
+              <BTestAuthor>John B. - Harry Salon</BTestAuthor>
             </Grid.Column>
           </Grid>
         </div>
         <div>
-          <Grid>
+          <Grid stackable>
             <Grid.Column width={2}>
               <Icon name='quote left' size='huge' />
             </Grid.Column>
             <Grid.Column width={4} style={{ margin: '50px 0' }}>
-              <Image src='https://wtwp.com/wp-content/uploads/2015/06/placeholder-image.png' size='small' />
+              <Image src='https://wtwp.com/wp-content/uploads/2015/06/placeholder-image.png' size='small' style={{ margin: '0 auto' }} />
             </Grid.Column>
             <Grid.Column width={10} style={{ margin: '50px 0' }}>
-              <p>
+              <BTestP>
                 "Bacon ipsum dolor amet alcatra cupim leberkas kevin, pork chop pork belly corned beef sirloin."
-              </p>
-              <BTestAuthor>Bob B. - MyGToBarber</BTestAuthor>
+              </BTestP>
+              <BTestAuthor>Jane C. - Nibbles Nails</BTestAuthor>
             </Grid.Column>
           </Grid>
         </div>
-      </Slider>
+      </TestSlider>
     </Container>
   </BTestWrapper>
 )

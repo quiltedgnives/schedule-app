@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { Icon, Image } from 'semantic-ui-react';
+import { Icon, Image, Grid } from 'semantic-ui-react';
+import Slider from 'react-slick';
 
 export const HeaderP = styled.p`
   font-size: 18px;
@@ -68,6 +69,10 @@ export const BWorksWrapper = styled.div`
   color: #4A4A4A;
   height: 500px;
   padding: 5px;
+
+  @media (max-width: 768px) {
+    height: 1000px;
+  }
 `
 
 export const StepIcon = styled(Icon)`
@@ -81,9 +86,41 @@ export const BTestWrapper = styled.div`
   color: white;
   font-family: Montserrat;
   font-size: 18px;
+
+  @media (max-width: 768px) {
+    height: 800px;
+  }
 `
 
 export const BTestAuthor = styled.span`
   margin-top: 20px;
   padding-left: 240px;
+
+  @media (max-width: 768px) {
+    padding-left: 80px;
+  }
+`
+
+export const BMemberWrapper = styled(Grid)`
+  @media (max-width: 768px) {
+    text-align: center !important; 
+  }
+`
+
+export const TestSlider = styled(Slider)`
+  width: 800px; 
+  margin: 0 auto; 
+  height: 300px;
+  padding: 60px 30px;
+
+  @media (max-width: 768px) {
+    width: 375px !important;
+    height: 450px;
+  }
+`
+
+export const BTestP = styled.p`
+  @media (max-width: 768px) {
+    text-align: center
+  }
 `
