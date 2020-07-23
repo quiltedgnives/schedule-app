@@ -4,9 +4,22 @@ api = Namespace('business', description='business related opperations')
 
 business = api.model('Business', {
     # TODO need to create and add model for business
+    "busName" : fields.String,
+    "location" : fields.String,
+    "admin" : fields.String,
+    bus_name = db.StringField(required=True)
+    workers_name = db.StringField(required=True)
+    location = db.StringField(required=True)
+    admin = db.StringField(required=True)
+    password = db.StringField(required=True)
 })
 
-@api.route('/<int:bus_id>')
+@api.route('/<string:bus_id>/workers')
+class Worker(Resource):
+
+    def get(self, bus_id)
+
+@api.route('/<string:bus_id>')
 class Business(Resource):
     
     def get(self, bus_id):
