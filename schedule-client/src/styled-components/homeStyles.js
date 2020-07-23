@@ -124,3 +124,12 @@ export const BTestP = styled.p`
     text-align: center
   }
 `
+
+export const ContactFormHead = styled.h1`
+  padding-top: 50px;
+  color: cornflowerblue;
+  font-family: Montserrat;
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 50px;
+`
