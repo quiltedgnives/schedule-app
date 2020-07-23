@@ -37,7 +37,6 @@ class Help extends Component {
                 iconPosition='left' 
               />
               <Form.Input
-                autoFocus
                 required         
                 name='email'
                 value={email}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { ContactConsumer } from '../../../providers/ContactProvider';
 import BContact from './BContact';
+import { Header } from 'semantic-ui-react';
 
 class Contact extends Component {
   componentDidMount() {
@@ -9,10 +10,16 @@ class Contact extends Component {
   }
 
   render() {
-    const { contact, history, contactSubmit } = this.props
+    const { contact, history, contactSubmit, match } = this.props
     return(
       <>
-        <BContact {...contact} history={history} contactSubmit={contactSubmit} />
+        <Header as='h1' textAlign='center'>Contact Us!</Header>
+        <BContact 
+          {...contact} 
+          history={history} 
+          contactSubmit={contactSubmit} 
+          id={match.params.business_id} 
+        />
       </>
     )
   }
