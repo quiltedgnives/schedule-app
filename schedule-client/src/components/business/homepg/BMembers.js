@@ -2,7 +2,7 @@ export const members = [
   { 
     name: 'Dax Allen',
     title: 'Back-End Developer',
-    img: "https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png",
+    img: "https://img.favpng.com/17/3/18/computer-icons-user-profile-male-png-favpng-ZmC9dDrp9x27KFnnge0jKWKBs.jpg",
     txt: 'Bacon ipsum dolor amet alcatra cupim leberkas kevin, pork chop pork belly corned beef sirloin',
     fb: 'https://www.facebook.com',
     li: 'https://www.linkedin.com/',
@@ -11,7 +11,7 @@ export const members = [
   { 
     name: 'Henry Doan',
     title: 'Front-End Developer',
-    img: "https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png",
+    img: "https://img.favpng.com/17/3/18/computer-icons-user-profile-male-png-favpng-ZmC9dDrp9x27KFnnge0jKWKBs.jpg",
     txt: 'Bacon ipsum dolor amet alcatra cupim leberkas kevin, pork chop pork belly corned beef sirloin',
     fb: 'https://www.facebook.com',
     li: 'https://www.linkedin.com/',
@@ -20,7 +20,7 @@ export const members = [
   { 
     name: 'Zach Boyle',
     title: 'Back-End Developer',
-    img: "https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png",
+    img: "https://img.favpng.com/17/3/18/computer-icons-user-profile-male-png-favpng-ZmC9dDrp9x27KFnnge0jKWKBs.jpg",
     txt: 'Bacon ipsum dolor amet alcatra cupim leberkas kevin, pork chop pork belly corned beef sirloin',
     fb: 'https://www.facebook.com',
     li: 'https://www.linkedin.com/',

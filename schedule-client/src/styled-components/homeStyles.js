@@ -133,3 +133,18 @@ export const ContactFormHead = styled.h1`
   text-align: center;
   margin-bottom: 50px;
 `
+
+export const ContactDetail = styled.p`
+  color: cornflowerblue;
+  font-family: Montserrat;
+  font-size: 12px;
+  margin: 20px 0 ;
+`
+
+export const ContactHeader = styled.h1`
+  color: cornflowerblue;
+  font-family: Montserrat;
+  font-size: 40px;
+  margin: 30px 0;
+  text-align: center;
+`

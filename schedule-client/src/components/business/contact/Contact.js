@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { ContactConsumer } from '../../../providers/ContactProvider';
 import BContact from './BContact';
 import { Header } from 'semantic-ui-react';
+import { ContactHeader } from '../../../styled-components/homeStyles';
 
 class Contact extends Component {
   componentDidMount() {
@@ -13,7 +14,7 @@ class Contact extends Component {
     const { contact, history, contactSubmit, match } = this.props
     return(
       <>
-        <Header as='h1' textAlign='center'>Contact Us!</Header>
+        <ContactHeader>Contact Us!</ContactHeader>
         <BContact 
           {...contact} 
           history={history} 

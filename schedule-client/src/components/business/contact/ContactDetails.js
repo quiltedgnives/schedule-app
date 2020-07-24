@@ -1,4 +1,6 @@
 import React from 'react';
+import { Grid, Icon } from 'semantic-ui-react';
+import { ContactDetail } from '../../../styled-components/homeStyles';
 
 const ContactDetails = ({ address, email, phone, map }) => (
   <>
@@ -12,9 +14,20 @@ const ContactDetails = ({ address, email, phone, map }) => (
       aria-hidden="false" 
       tabindex="0">
     </iframe>
-    <p>{address}</p>
-    <p>{email}</p>
-    <p>{phone}</p>
+    <Grid stackable columns={3} textAlign='center' padded style={{ color: 'cornflowerblue' }}>
+      <Grid.Column>
+        <Icon name='map marker alternate' size='huge' />
+        <ContactDetail>{address}</ContactDetail>
+      </Grid.Column>
+      <Grid.Column>
+        <Icon name='mail' size='huge' />
+        <ContactDetail>{email}</ContactDetail>
+      </Grid.Column>
+      <Grid.Column>
+        <Icon name='phone' size='huge' />
+        <ContactDetail>{phone}</ContactDetail>
+      </Grid.Column>
+    </Grid>
   </>
 )
 
