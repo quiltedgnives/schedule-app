@@ -16,6 +16,7 @@ class ApptForm extends Component {
     this.props.addAppt(parseInt(this.props.business_id), this.state)
     this.setState({ dateTime: '', worker: '', service: '', notes: '' })
   }
+
   workerOpt = () => {
     let workersOpt = []
     this.props.workers.map( w => 
