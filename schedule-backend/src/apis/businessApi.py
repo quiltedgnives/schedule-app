@@ -14,12 +14,12 @@ business = api.model('Business', {
     password = db.StringField(required=True)
 })
 
-@api.route('/<string:bus_id>/workers')
+@api.route('/api/<string:bus_id>/workers')
 class Worker(Resource):
 
     def get(self, bus_id)
 
-@api.route('/<string:bus_id>')
+@api.route('/api/<string:bus_id>')
 class Business(Resource):
     
     def get(self, bus_id):
@@ -30,7 +30,7 @@ class Business(Resource):
         # Call method to update a business
         return { bus_id: "This will confirm a business update in the DB" }
 
-@api.route('/')
+@api.route('/api/')
 class MakeBusiness(Resource):
 
     def post(self):

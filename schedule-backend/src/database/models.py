@@ -27,6 +27,7 @@ class Client(db.Document):
     dob = db.StringField(required=True)
     pref_worker = db.StringField(required=False)
     customer_id = db.StringField(required=True)
+    appointments = db.EmbeddedDocumentList(Appointment)
 
 
 
