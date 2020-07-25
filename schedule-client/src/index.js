@@ -8,6 +8,7 @@ import 'semantic-ui-css/semantic.min.css';
 import ContactProvider from './providers/ContactProvider';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import ApptProvider from './providers/ApptProvider';
 
 initMiddleware();
 
@@ -15,9 +16,11 @@ ReactDOM.render(
   <React.StrictMode>
     <AuthProvider>
       <ContactProvider>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
+        <ApptProvider>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </ApptProvider>
       </ContactProvider>
     </AuthProvider>
   </React.StrictMode>,

@@ -23,8 +23,8 @@ const App = () => (
         <Route exact path="/" component={BHome} /> 
         <Route exact path="/:business_id/home" component={CHome} /> 
         <Route exact path="/:business_id/contact" component={Contact} /> 
-        <AdminRoute exact path="/:business_id/admin-dash" component={Bdash} />
-        <ProtectedRoute exact path="/:business_id/dash" component={Bdash} />
+        <Route exact path="/:business_id/admin-dash" component={Bdash} />
+        <Route exact path="/:business_id/dash" component={Bdash} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
         <Route exact path="/help" component={Help} />
