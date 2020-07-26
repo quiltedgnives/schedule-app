@@ -28,21 +28,32 @@ class Appt extends Component {
   handleClose = () => this.setState({ modalOpen: false })
   
   calEvents = () => {
-    let events = []
+    let newEvents = []
     this.state.appts.map( a => 
-      events.push({
+      newEvents.push({
         title: a.service,
         start: String(a.dateTime),
         end: String(a.dateTime),
         allDay: false
       })
     )
-    this.setState({ events })
+    this.setState({ events: newEvents })
   }
 
   addAppt = (id, appointment) => {
     const { appts } = this.state
-    this.setState({ appts: [ ...appts, appointment]})
+    this.setState({ appts: [ ...appts, appointment]}, () => {
+       let newEvents = []
+        this.state.appts.map( a => 
+          newEvents.push({
+            title: a.service,
+            start: String(a.dateTime),
+            end: String(a.dateTime),
+            allDay: false
+          })
+        )
+        this.setState({ events: newEvents })
+    })
   }
 
   updateAppt = (id, appointment, history) => {
@@ -67,19 +78,20 @@ class Appt extends Component {
       <>
         <Container>
           <Grid stackable>
-            <Grid.Column width={14}>
+            <Grid.Column width={15}>
               <BAppCal appts={this.state.events} />
             </Grid.Column>
-            <Grid.Column width={2}>
+            <Grid.Column width={1}>
             <Modal
-              trigger={<Button onClick={this.handleOpen}>New Appointment</Button>}
+              trigger={<Button onClick={this.handleOpen}>+</Button>}
               open={this.state.modalOpen}
               onClose={this.handleClose}
               size='small'
+              closeIcon
             >
               <Header icon='browser' content='Add Appointment' />
               <Modal.Content>
-                <ApptForm addAppt={this.addAppt} business_id={id} workers={this.state.workers} />
+                <ApptForm addAppt={this.addAppt} business_id={id} workers={this.state.workers} handleClose={this.handleClose}/>
               </Modal.Content>
             </Modal>
             </Grid.Column>

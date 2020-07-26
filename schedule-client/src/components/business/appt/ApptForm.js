@@ -13,7 +13,9 @@ class ApptForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+    const { dateTime, ...rest } = this.state
     this.props.addAppt(parseInt(this.props.business_id), this.state)
+    this.props.handleClose()
     this.setState({ dateTime: '', worker: '', service: '', notes: '' })
   }
 
@@ -35,6 +37,9 @@ class ApptForm extends Component {
           onChange={this.handleDateTimeChange}
           value={dateTime}
         />
+        <br />
+        <br />
+        <br />
         <Form.Select
           label="Worker:"
           name="worker"
