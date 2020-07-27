@@ -2,7 +2,7 @@ import React from 'react';
 import { Calendar, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
-import { Modal, Button, Header, Icon } from 'semantic-ui-react';
+import { Modal, Button, Icon } from 'semantic-ui-react';
 
 const localizer = momentLocalizer(moment) 
 
@@ -14,10 +14,10 @@ class EventShow extends React.Component {
   handleClose = () => this.setState({ modalOpen: false })
 
   render() {
-    const { title, worker, notes, start} = this.props.event
+    const { title, worker, notes, start, id } = this.props.event
     return (
       <Modal
-        trigger={<p onClick={this.handleOpen}>{this.props.event.title}</p>}
+        trigger={<p onClick={this.handleOpen}>{title}</p>}
         open={this.state.modalOpen}
         onClose={this.handleClose}
         size='small'
@@ -32,7 +32,7 @@ class EventShow extends React.Component {
           </Modal.Description>
         </Modal.Content>
         <Modal.Actions>
-          <Button color='red'>
+          <Button color='red' onClick={() => this.props.deleteAppt(id)}>
             <Icon name='remove' /> Delete
           </Button>
           <Button color='yellow'>
@@ -44,7 +44,7 @@ class EventShow extends React.Component {
   }
 }
 
-const BAppCal = ({ appts }) => (
+const BAppCal = ({ appts, deleteAppt }) => (
   <Calendar
     localizer={localizer}
     events={appts}
@@ -52,7 +52,9 @@ const BAppCal = ({ appts }) => (
     startAccessor="start"
     endAccessor="end"
     style={{ height: 500 }}
-    components={{ event: EventShow }}
+    components={{ 
+      event: (event) => <EventShow deleteAppt={deleteAppt} {...event} />  
+    }}
   />
 )
 

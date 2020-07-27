@@ -43,24 +43,17 @@ class Appt extends Component {
     this.setState({ events: newEvents })
   }
 
+  getUniqId = () => {
+    //NOTE We are just using this as a helper function for id's since db not connected
+    return Math.floor((1 + Math.random()) * 0x10000)
+      .toString(16)
+      .substring(1);
+   }
+
   addAppt = (id, appointment) => {
     const { appts } = this.state
-    this.setState({ appts: [ ...appts, appointment]}, () => {
-       let newEvents = []
-        this.state.appts.map( a => 
-          newEvents.push({
-            title: a.service,
-            start: String(a.dateTime),
-            end: String(a.dateTime),
-            allDay: false,
-            id: a.id,
-            worker: a.worker,
-            service: a.service,
-            notes: a.notes,
-          })
-        )
-        this.setState({ events: newEvents })
-    })
+    const newAppt = { id: this.getUniqId(), ...appointment }
+    this.setState({ appts: [ ...appts, newAppt]}, () => { this.calEvents() })
   }
 
   updateAppt = (id, appointment, history) => {
@@ -75,8 +68,8 @@ class Appt extends Component {
 
   deleteAppt = (id, history) => {
     const { appts } = this.state
-    this.setState({ appts: appts.filter( a => a.id !== id )})
-    history.push(`${id}/admin-dash`)
+    this.setState({ appts: appts.filter( a => a.id !== id )}, () => { this.calEvents() })
+    // history.push(`${id}/admin-dash`)
   }
 
   render() {
@@ -86,7 +79,7 @@ class Appt extends Component {
         <Container>
           <Grid stackable>
             <Grid.Column width={15}>
-              <BAppCal appts={this.state.events} />
+              <BAppCal appts={this.state.events} deleteAppt={this.deleteAppt}/>
             </Grid.Column>
             <Grid.Column width={1}>
             <Modal
