@@ -34,7 +34,10 @@ class Appt extends Component {
         title: a.service,
         start: String(a.dateTime),
         end: String(a.dateTime),
-        allDay: false
+        allDay: false, 
+        id: a.id,
+        worker: a.worker,
+        notes: a.notes,
       })
     )
     this.setState({ events: newEvents })
@@ -49,7 +52,11 @@ class Appt extends Component {
             title: a.service,
             start: String(a.dateTime),
             end: String(a.dateTime),
-            allDay: false
+            allDay: false,
+            id: a.id,
+            worker: a.worker,
+            service: a.service,
+            notes: a.notes,
           })
         )
         this.setState({ events: newEvents })
