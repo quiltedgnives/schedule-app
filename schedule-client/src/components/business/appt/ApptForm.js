@@ -5,6 +5,13 @@ import DateTimePicker from 'react-datetime-picker';
 class ApptForm extends Component {
   state = { dateTime: '', worker: '', service: '', notes: '' }
 
+  componentDidMount() {
+    if (this.props.id) {
+      const { start, worker, notes, title } = this.props
+      this.setState({ dateTime: start, worker, service: title, notes })
+    }
+  }
+
   handleDateTimeChange = (date) => {
     this.setState({ dateTime: date });
   }
@@ -13,9 +20,14 @@ class ApptForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const { dateTime, ...rest } = this.state
-    this.props.addAppt(parseInt(this.props.business_id), this.state)
-    this.props.handleClose()
+    if (this.props.id) {
+      const { id, updateAppt, handleClose } = this.props
+      updateAppt(id, this.state)
+      handleClose()
+    } else {
+      this.props.addAppt(parseInt(this.props.business_id), this.state)
+      this.props.handleClose()
+    }
     this.setState({ dateTime: '', worker: '', service: '', notes: '' })
   }
 

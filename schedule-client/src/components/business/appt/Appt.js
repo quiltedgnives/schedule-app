@@ -63,7 +63,7 @@ class Appt extends Component {
       }
       return a
     })
-    this.setState({ appts })
+    this.setState({ appts }, () => { this.calEvents() })
   }
 
   deleteAppt = (id, history) => {
@@ -79,7 +79,12 @@ class Appt extends Component {
         <Container>
           <Grid stackable>
             <Grid.Column width={15}>
-              <BAppCal appts={this.state.events} deleteAppt={this.deleteAppt}/>
+              <BAppCal 
+                appts={this.state.events} 
+                deleteAppt={this.deleteAppt} 
+                workers={this.state.workers}
+                updateAppt={this.updateAppt}
+              />
             </Grid.Column>
             <Grid.Column width={1}>
             <Modal
@@ -91,7 +96,12 @@ class Appt extends Component {
             >
               <Header icon='browser' content='Add Appointment' />
               <Modal.Content>
-                <ApptForm addAppt={this.addAppt} business_id={id} workers={this.state.workers} handleClose={this.handleClose}/>
+                <ApptForm 
+                  addAppt={this.addAppt} 
+                  business_id={id} 
+                  workers={this.state.workers} 
+                  handleClose={this.handleClose}
+                />
               </Modal.Content>
             </Modal>
             </Grid.Column>
