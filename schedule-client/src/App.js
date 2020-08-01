@@ -14,6 +14,7 @@ import Navbar from './components/shared/Navbar';
 import Bdash from './components/business/businessDash/BDash';
 import CustomerRegister from './components/auth/CustomerRegister';
 import ThankYouPg from './components/shared/ThankYouPg';
+import CDash from './components/customer/customerDash/CDash';
 
 const App = () => (
   <>  
@@ -24,7 +25,7 @@ const App = () => (
         <Route exact path="/:business_id/home" component={CHome} /> 
         <Route exact path="/:business_id/contact" component={Contact} /> 
         <Route exact path="/:business_id/admin-dash" component={Bdash} />
-        <Route exact path="/:business_id/dash" component={Bdash} />
+        <Route exact path="/:business_id/dash" component={CDash} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
         <Route exact path="/help" component={Help} />
