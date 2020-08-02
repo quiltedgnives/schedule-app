@@ -1,5 +1,5 @@
 #!/bin/sh
-'''exec' "/mnt/d/School/2020 Summer/CSIS 2450/scheduleApp/venv/bin/python3" "$0" "$@"
+'''exec' "/mnt/d/School/2020 Summer/CSIS 2450/scheduleApp/schedule-backend/venv/bin/python3" "$0" "$@"
 ' '''
 # -*- coding: utf-8 -*-
 import re

@@ -6,7 +6,10 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-flask = "==1.1.2"
+flask = "*"
+flask-restx = "*"
+mongoengine = "*"
+flask-mongoengine = "*"
 
 [requires]
 python_version = "3.8"

@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/mnt/d/School/2020 Summer/CSIS 2450/scheduleApp/venv"
+VIRTUAL_ENV="/mnt/d/School/2020 Summer/CSIS 2450/scheduleApp/schedule-backend/venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

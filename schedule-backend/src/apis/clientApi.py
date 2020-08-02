@@ -1,12 +1,5 @@
-from flask_restx import Namespace, Resource, fields
+from flask_restx import Resource, fields
 
-api = Namespace('client', description='Client related operations')
-
-client = api.model('Client', {
-    # TODO need to create and add model for client
-})
-
-@api.route('/<int:client_id>')
 class Client(Resource):
     
     def get(self, client_id):
@@ -17,7 +10,6 @@ class Client(Resource):
         # Call method to update business.
         return { client_id: 'This will confirm a client update in the DB'}
 
-@api.route('/')
 class CreateClient(Resource):
     
     def post(self):

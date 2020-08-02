@@ -29,7 +29,7 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/mnt/d/School/2020 Summer/CSIS 2450/scheduleApp/venv"
+set -gx VIRTUAL_ENV "/mnt/d/School/2020 Summer/CSIS 2450/scheduleApp/schedule-backend/venv"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

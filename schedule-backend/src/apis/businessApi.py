@@ -1,25 +1,26 @@
-from flask_restx import Namespace, Resource, fields
+from flask_restx import Resource, fields
 
-api = Namespace('business', description='business related opperations')
-
-business = api.model('Business', {
-    # TODO need to create and add model for business
-    "busName" : fields.String,
-    "location" : fields.String,
-    "admin" : fields.String,
-    bus_name = db.StringField(required=True)
-    workers_name = db.StringField(required=True)
-    location = db.StringField(required=True)
-    admin = db.StringField(required=True)
-    password = db.StringField(required=True)
-})
-
-@api.route('/api/<string:bus_id>/workers')
 class Worker(Resource):
 
-    def get(self, bus_id)
+    def get(self, bus_id, worker_id):
+        # call method to get single worker
+        return { bus_id: "Workers" , worker_id: "Specific worker"}
 
-@api.route('/api/<string:bus_id>')
+    def put(self, bus_id, worker_id):
+        # call method to update a worker
+        return '', 200
+
+class Workers(Resource):
+
+    def get(self, bus_id):
+        # call method to get all the workers
+        return { bus_id: "Return list of workers"}
+
+    def post(self, bus_id):
+        # call method to create worker
+        return '', 200
+
+
 class Business(Resource):
     
     def get(self, bus_id):
@@ -30,8 +31,7 @@ class Business(Resource):
         # Call method to update a business
         return { bus_id: "This will confirm a business update in the DB" }
 
-@api.route('/api/')
-class MakeBusiness(Resource):
+class CreateBusiness(Resource):
 
     def post(self):
         # Call method to add business to DB
