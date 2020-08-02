@@ -1,6 +1,7 @@
 import React from 'react';
 import { List, Button } from 'semantic-ui-react';
 import moment from 'moment';
+import { Link } from 'react-router-dom';
 
 const CApptList = ({ appts, setShownAppt}) => (
   <>
@@ -17,7 +18,9 @@ const CApptList = ({ appts, setShownAppt}) => (
         </List.Item>
       )}
     </List>
-    <Button>Calendar View</Button>
+    <Link to='/1/cal'>
+      <Button>Calendar View</Button>
+    </Link>
   </>
 )
 
