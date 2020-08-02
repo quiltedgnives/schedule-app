@@ -74,16 +74,16 @@ class CAppts extends Component {
   updateAppt = (id, appointment, history) => {
     const appts = this.state.appts.map( a => {
       if (a.id === id) {
-        return appointment
+        return { ...appointment, business_id: a.business_id }
       }
       return a
     })
-    this.setState({ appts }, () => { this.calEvents() })
+    this.setState({ appts, shownAppt: {...appointment, id, } }, () => { this.calEvents() })
   }
 
   deleteAppt = (id, history) => {
     const { appts } = this.state
-    this.setState({ appts: appts.filter( a => a.id !== id )}, () => { this.calEvents() })
+    this.setState({ appts: appts.filter( a => a.id !== id ), shownAppt: {} }, () => { this.calEvents() })
     // history.push(`${id}/admin-dash`)
   }
   render() {
@@ -94,7 +94,13 @@ class CAppts extends Component {
           <CApptList appts={appts} setShownAppt={this.setShownAppt} />
         </Grid.Column>
         <Grid.Column width={6}>
-          <CApptShow shownAppt={shownAppt} addAppt={this.addAppt} workers={workers} />
+          <CApptShow 
+            shownAppt={shownAppt} 
+            addAppt={this.addAppt} 
+            workers={workers} 
+            deleteAppt={this.deleteAppt}
+            updateAppt={this.updateAppt}
+          />
         </Grid.Column>
       </Grid>
     )

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Header, Image, Button, Modal } from 'semantic-ui-react';
+import { Header, Image, Button, Modal, Icon } from 'semantic-ui-react';
 import moment from 'moment';
 import ApptForm  from '../../business/appt/ApptForm';
+import ApptEdit from '../../business/appt/ApptEdit';
 
 class CApptShow extends Component {
   state = { modalOpen: false }
@@ -12,7 +13,7 @@ class CApptShow extends Component {
 
   render() {
     const { service, dateTime, worker, business_id, id  } = this.props.shownAppt
-    const { addAppt, workers } = this.props
+    const { addAppt, workers, shownAppt, updateAppt, deleteAppt } = this.props
     return(
       <>
         { id ? 
@@ -27,6 +28,16 @@ class CApptShow extends Component {
             <Header>{moment(dateTime).format('h:mm a')}</Header>
             <Image src='https://res.cloudinary.com/henry-devpoint-labs/image/upload/v1596047355/DevPoint%20Launch%20Summer%2020/iconfinder_user_1608727_kxs5so.png' rounded size='small' />
             <Header>{business_id}</Header>
+            <Button color='red' onClick={() => deleteAppt(id)}>
+              <Icon name='remove' /> Delete
+            </Button>
+            <ApptEdit 
+              {...shownAppt}
+              title={service}
+              start={dateTime} 
+              workers={workers} 
+              updateAppt={updateAppt}
+            />
           </>
           :
           ""
