@@ -23,7 +23,7 @@ class ApptEdit extends Component {
           </Button>
         }
       >
-        <Modal.Header>Edit Appointment</Modal.Header>
+        <Modal.Header color='blue'>Edit Appointment</Modal.Header>
         <Modal.Content>
           <ApptForm
            {...this.props}

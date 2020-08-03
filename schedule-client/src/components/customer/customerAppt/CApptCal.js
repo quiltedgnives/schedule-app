@@ -24,8 +24,9 @@ class CEventShow extends React.Component {
         onClose={this.handleClose}
         size='small'
         closeIcon
+        className='blue-txt'
       >
-        <Modal.Header>{moment(start).format('MMMM Do YYYY, h:mm a')}</Modal.Header>
+        <Modal.Header className='blue-txt'>{moment(start).format('MMMM Do YYYY, h:mm a')}</Modal.Header>
         <Modal.Content>
           <Modal.Description>
             <p>Worker: { worker } </p>

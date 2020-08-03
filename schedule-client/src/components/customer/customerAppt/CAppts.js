@@ -89,7 +89,7 @@ class CAppts extends Component {
   render() {
     const { appts, shownAppt, workers } = this.state
     return(
-      <Grid>
+      <Grid divided>
         <Grid.Column width={10}>
           <CApptList appts={appts} setShownAppt={this.setShownAppt} />
         </Grid.Column>

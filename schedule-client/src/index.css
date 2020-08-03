@@ -35,3 +35,16 @@
 .react-datetime-picker__clock {
   height: 205px !important;
 }
+
+.rbc-event {
+  background-color: #54c8ff;
+}
+
+.rbc-toolbar-label {
+  color: #54c8ff;
+  font-size: 3rem;
+}
+
+.blue-txt {
+  color: #54c8ff !important;
+}

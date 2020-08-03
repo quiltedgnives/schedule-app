@@ -1,10 +1,12 @@
 import React from 'react';
 import CAppts from '../customerAppt/CAppts';
-import { Container } from 'semantic-ui-react';
+import { Container, Header } from 'semantic-ui-react';
 
 const Cdash = () => (
   <Container>
-    <h1>CDash</h1>
+    <br />
+    <br />
+    <Header className='blue-txt' textAlign='center' size='huge'>CDash</Header>
     <CAppts />
   </Container>
 )

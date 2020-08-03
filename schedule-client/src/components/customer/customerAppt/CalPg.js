@@ -93,6 +93,8 @@ class CalPg extends Component {
     return(
       <>
         <Container>
+          <br />
+          <br />
           <Grid stackable>
             <Grid.Column width={15}>
               <CAppCal 
@@ -104,13 +106,13 @@ class CalPg extends Component {
             </Grid.Column>
             <Grid.Column width={1}>
               <Modal
-                trigger={<Button onClick={this.handleOpen}>+</Button>}
+                trigger={<Button color='blue' inverted onClick={this.handleOpen}>+</Button>}
                 open={this.state.modalOpen}
                 onClose={this.handleClose}
                 size='small'
                 closeIcon
               >
-                <Header icon='browser' content='Add Appointment' />
+                <Header icon='browser' color='blue' content='Add Appointment' />
                 <Modal.Content>
                   <ApptForm 
                     addAppt={this.addAppt} 

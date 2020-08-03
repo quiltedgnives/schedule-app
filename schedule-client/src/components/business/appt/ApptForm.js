@@ -75,7 +75,7 @@ class ApptForm extends Component {
           value={notes}
           onChange={this.handleChange}
         />
-        <Form.Button type='submit'>Submit</Form.Button>
+        <Form.Button color='blue' inverted type='submit'>Submit</Form.Button>
       </Form>
     )
   }
