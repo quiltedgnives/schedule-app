@@ -16,6 +16,7 @@ class ApptEdit extends Component {
         onOpen={this.open}
         onClose={this.close}
         size='small'
+        closeIcon
         trigger={
           <Button color='yellow'>
             <Icon name='pencil' /> Edit

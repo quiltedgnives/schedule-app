@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Form } from 'semantic-ui-react';
 import DateTimePicker from 'react-datetime-picker';
+import 'react-datetime-picker/src/DateTimePicker.less';
 
 class ApptForm extends Component {
   state = { dateTime: '', worker: '', service: '', notes: '' }
@@ -52,20 +53,22 @@ class ApptForm extends Component {
         <br />
         <br />
         <br />
-        <Form.Select
-          label="Worker:"
-          name="worker"
-          value={worker}
-          onChange={this.handleChange}
-          options={this.workerOpt()}
-        />
-        <Form.Select
-          label="Service:"
-          name="service"
-          value={service}
-          onChange={this.handleChange}
-          options={servicesOpt}
-        />
+        <Form.Group widths='equal'>
+          <Form.Select
+            label="Worker:"
+            name="worker"
+            value={worker}
+            onChange={this.handleChange}
+            options={this.workerOpt()}
+          />
+          <Form.Select
+            label="Service:"
+            name="service"
+            value={service}
+            onChange={this.handleChange}
+            options={servicesOpt}
+          />
+        </Form.Group>
         <Form.TextArea
           label="Notes:" 
           name='notes'

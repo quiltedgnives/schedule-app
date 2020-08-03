@@ -9,6 +9,7 @@ import ContactProvider from './providers/ContactProvider';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ApptProvider from './providers/ApptProvider';
+import './index.css';
 
 initMiddleware();
 
