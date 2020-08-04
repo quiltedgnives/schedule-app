@@ -1,6 +1,8 @@
+from flask import Response, request
 from flask_restx import Resource, fields
+from ..database.models import Client
 
-class Client(Resource):
+class ClientApi(Resource):
     
     def get(self, client_id):
         # Call method to get client out of DB using client_id
@@ -10,8 +12,10 @@ class Client(Resource):
         # Call method to update business.
         return { client_id: 'This will confirm a client update in the DB'}
 
-class CreateClient(Resource):
+class CreateClientApi(Resource):
     
     def post(self):
-        # Call method to add client
-        return { 'confirmation': "This will send a confirmation message"}
+        body = request.get_json()
+        client = Client(**body).save()
+        id = client.id
+        return { "id" : str(id) }, 200

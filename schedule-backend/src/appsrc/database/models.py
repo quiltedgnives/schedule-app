@@ -18,25 +18,26 @@ class Address(db.EmbeddedDocument):
     state = db.StringField(required=True)
     zip = db.StringField(min_length=5, max_length=5, required=True)
 
-class User(db.Document):
-    user_id = db.StringField(required=True)
-    user_type = db.StringField(choices=('Client', 'Worker'))
+class User(db.EmbeddedDocument):
+    user_type = db.StringField(required=True, choices=('client', 'worker'))
     name = db.StringField(required=True)
     email = db.EmailField(unique=True, required=True)
-    password = db.StringField(required=True, min_length=15)
-    appointments = db.ListField(EmbeddedDocumentField(Appointment))
+    password = db.StringField(min_length=15)
+    appointments = db.ListField(db.EmbeddedDocumentField(Appointment))
+
+    meta = {'allow_inheritance': True}
 
 class Worker(User):
     is_admin = db.BooleanField(required=True)
     worker_type = db.StringField(required=True)
 
 class Client(User):
-    dob = db.StringField()
+    dob = db.DateTimeField()
     pref_worker = db.ReferenceField('Worker')
 
 class Business(db.Document):
     name = db.StringField(required=True)
-    workers = db.ListField(EmbeddedDocumentField(Worker))
+    workers = db.ListField(db.EmbeddedDocumentField(Worker))
     location = db.EmbeddedDocumentField(Address)
     admin = db.StringField(required=True)
     password = db.StringField(required=True)
