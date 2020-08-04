@@ -1,6 +1,6 @@
 from flask import Response, request
 from flask_restx import Resource, fields
-from ..database.models import Client
+from ..database.models import Client, Test
 
 class ClientApi(Resource):
     
@@ -16,6 +16,7 @@ class CreateClientApi(Resource):
     
     def post(self):
         body = request.get_json()
-        client = Client(**body).save()
+        client = Client(**body)
+        client.save()
         id = client.id
         return { "id" : str(id) }, 200
