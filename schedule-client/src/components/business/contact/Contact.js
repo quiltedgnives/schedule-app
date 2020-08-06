@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { ContactConsumer } from '../../../providers/ContactProvider';
 import BContact from './BContact';
-import { Header } from 'semantic-ui-react';
 import { ContactHeader } from '../../../styled-components/homeStyles';
 
 class Contact extends Component {

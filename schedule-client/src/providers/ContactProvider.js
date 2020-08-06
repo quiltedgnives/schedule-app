@@ -6,10 +6,10 @@ export const ContactConsumer = ContactContext.Consumer;
 
 class ContactProvider extends Component {
   state = { contact: {
-    address: '123 street',
-    email: 'apples@apple.com',
-    phone: '123-123-1234', 
-    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d768741.4841754775!2d-113.04034005926903!3d41.18042629164514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x875335b1dff77dc7%3A0xe4f87e4c6ef796fb!2sGreat%20Salt%20Lake!5e0!3m2!1sen!2sus!4v1595539908724!5m2!1sen!2sus",
+    address: '1033 E. 2100 S., Suite 200 Salt Lake City, UT 84106',
+    email: 'solasalonstudios.com',
+    phone: '801-901-3576', 
+    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.6486064755286!2d-111.86358468448434!3d40.72575144471104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87528aa6b86a5103%3A0xf2a29d21befee015!2sSola%20Salon%20Studios!5e0!3m2!1sen!2sus!4v1596754128535!5m2!1sen!2sus",
   }, contacts: [] }
 
   handleHelp = (help, history) => {

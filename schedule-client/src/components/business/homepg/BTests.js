@@ -27,7 +27,7 @@ const BTests = () => (
             </Grid.Column>
             <Grid.Column width={10} style={{ margin: '50px 0' }}>
               <BTestP>
-                "Bacon ipsum dolor amet alcatra cupim leberkas kevin, pork chop pork belly corned beef sirloin."
+                "Great and easy to use system to keep track of a chaotic work environment."
               </BTestP>
               <BTestAuthor>Bob A. - MyGToBarber</BTestAuthor>
             </Grid.Column>
@@ -43,7 +43,7 @@ const BTests = () => (
             </Grid.Column>
             <Grid.Column width={10} style={{ margin: '50px 0' }}>
               <BTestP>
-                "Bacon ipsum dolor amet alcatra cupim leberkas kevin, pork chop pork belly corned beef sirloin."
+                "This took over countless binders and excel sheets of information"
               </BTestP>
               <BTestAuthor>John B. - Harry Salon</BTestAuthor>
             </Grid.Column>
@@ -59,7 +59,7 @@ const BTests = () => (
             </Grid.Column>
             <Grid.Column width={10} style={{ margin: '50px 0' }}>
               <BTestP>
-                "Bacon ipsum dolor amet alcatra cupim leberkas kevin, pork chop pork belly corned beef sirloin."
+                "Awesome Product! With easy ways to make managing managable."
               </BTestP>
               <BTestAuthor>Jane C. - Nibbles Nails</BTestAuthor>
             </Grid.Column>

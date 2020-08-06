@@ -18,9 +18,9 @@ const BHeader = () => (
         <Grid.Column>
           <HeaderTxt>
             <Header as='h4'>About Us</Header>
-            <Header as='h1'>Welcome to the schduling app!</Header>
+            <Header as='h1'>Welcome to Schedule Magic!</Header>
             <HeaderP>
-              Bacon ipsum dolor amet alcatra cupim leberkas kevin, pork chop pork belly corned beef sirloin. Tongue sausage brisket cupim andouille, buffalo shankle pork chop short loin ribeye pig sirloin salami doner fatback. 
+              Schedule Magic is a all in one platform for businesses to have full functionally with their appointments and customers to keep track of appointments with different businesses.
             </HeaderP>
             <Link to='/help'>
               <Button color='blue' inverted>Need Help?</Button>

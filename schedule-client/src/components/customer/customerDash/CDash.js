@@ -6,7 +6,7 @@ const Cdash = () => (
   <Container>
     <br />
     <br />
-    <Header className='blue-txt' textAlign='center' size='huge'>CDash</Header>
+    <Header className='blue-txt' textAlign='center' size='huge'>DashBoard</Header>
     <CAppts />
   </Container>
 )

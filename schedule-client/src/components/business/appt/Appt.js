@@ -4,14 +4,56 @@ import BAppCal from './BApptCal';
 import { Container, Grid, Modal, Button, Header } from 'semantic-ui-react';
 
 class Appt extends Component {
-  state = { appts: [{ 
+  state = { appts: [
+  { 
     id: 1,
-    dateTime: 'Wed Jul 15 2020 00:00:00 GMT-0600 (Mountain Daylight Time)',
+    dateTime: 'Wed Aug 15 2020 00:00:00 GMT-0600 (Mountain Daylight Time)',
     worker: 'Jamie',
     service: 'Half Set',
     notes: 'none',
     business_id: 1,
-  },], 
+  },
+  { 
+    id: 2,
+    dateTime: 'Wed Aug 15 2020 00:00:00 GMT-0600 (Mountain Daylight Time)',
+    worker: 'Rose',
+    service: 'Full Set',
+    notes: 'Might be late',
+    business_id: 1,
+  },
+  { 
+    id: 3,
+    dateTime: 'Wed Aug 06 2020 01:10:00 GMT-0600 (Mountain Daylight Time)',
+    worker: 'Jamie',
+    service: 'Volume',
+    notes: 'none',
+    business_id: 1,
+  },
+  { 
+    id: 4,
+    dateTime: 'Wed Aug 11 2020 06:30:00 GMT-0600 (Mountain Daylight Time)',
+    worker: 'Mike',
+    service: 'Retouch',
+    notes: 'Injury on left shoulder',
+    business_id: 1,
+  },
+  { 
+    id: 5,
+    dateTime: 'Wed Aug 20 2020 10:40:00 GMT-0600 (Mountain Daylight Time)',
+    worker: 'Syd',
+    service: 'Classic',
+    notes: 'none',
+    business_id: 1,
+  },
+  { 
+    id: 6,
+    dateTime: 'Wed Aug 15 2020 11:40:00 GMT-0600 (Mountain Daylight Time)',
+    worker: 'Syd',
+    service: 'Classic',
+    notes: 'none',
+    business_id: 1,
+  },
+  ], 
   workers: [
     { id: 1, name: 'Syd' },
     { id: 2, name: 'Mike' },

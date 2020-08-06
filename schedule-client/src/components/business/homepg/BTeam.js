@@ -7,7 +7,7 @@ import { SectionTitle, TeamSubTitle } from '../../../styled-components/homeStyle
 const BTeam = () => (
   <Container>
     <SectionTitle>OUR TEAM</SectionTitle>
-    <TeamSubTitle>Bacon ipsum dolor amet alcatra cupim leberkas kevin</TeamSubTitle>
+    <TeamSubTitle>The dream team who developed the app.</TeamSubTitle>
     <Grid columns={2} stackable>
       {
         members.map( m => 

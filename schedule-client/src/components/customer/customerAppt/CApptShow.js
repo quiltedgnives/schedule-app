@@ -26,13 +26,13 @@ class CApptShow extends Component {
                 <Header as='h3' className='blue-txt'>{worker}</Header>
                 <p>on</p>
                 <Header as='h3' className='blue-txt'>{moment(dateTime).format('MMMM DD')}</Header>
-                <p>at</p>
-                <Header as='h3' className='blue-txt'>{moment(dateTime).format('h:mm a')}</Header>
+                {/* <p>at</p>
+                <Header as='h3' className='blue-txt'>{moment(dateTime).format('h:mm a')}</Header> */}
               </Grid.Column>
-              <Grid.Column>
+              {/* <Grid.Column>
                 <Image src='https://res.cloudinary.com/henry-devpoint-labs/image/upload/v1596047355/DevPoint%20Launch%20Summer%2020/iconfinder_user_1608727_kxs5so.png' rounded size='small' />
                 <Header className='blue-txt'>{business_id}</Header>
-              </Grid.Column>
+              </Grid.Column> */}
             </Grid>
             <br />
             <br />
