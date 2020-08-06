@@ -5,19 +5,20 @@ import random
 
 class WorkerApi(Resource):
 
-    def get(self, bus_id, worker_id):
-        # call method to get single worker
-        return { bus_id: "Workers" , worker_id: "Specific worker"}
+    def get(self, worker_id):
+        worker = Worker.objects.get(id=worker_id).to_json()
+        return Response(worker, mimetype="application/json", status=200)
 
     def put(self, bus_id, worker_id):
-        # call method to update a worker
+        body = request.get_json()
+        Worker.objects.get(id=worker_id).update(**body)
         return '', 200
 
 class WorkersApi(Resource):
 
     def get(self, bus_id):
-        # call method to get all the workers
-        return { bus_id: "Return list of workers"}
+        workers = Business.objects.get(id=bus_id).objects(workers__all='').to_json()
+        return Response(workers, mimetype="application/json", status=200)
 
     def post(self, bus_id):
         body = request.get_json()

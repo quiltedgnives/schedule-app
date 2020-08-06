@@ -3,7 +3,7 @@ from .clientApi import ClientApi, CreateClientApi
 from .authApi import SignupApi, LoginApi
 
 def initialize_routes(api):
-    api.add_resource(WorkerApi, '/api/business/<bus_id>/workers/<worker_id>')
+    api.add_resource(WorkerApi, '/api/workers/<worker_id>')
     api.add_resource(WorkersApi, '/api/business/<bus_id>/workers')
     api.add_resource(BusinessApi, '/api/business/<bus_id>')
     api.add_resource(CreateBusinessApi, '/api/business')

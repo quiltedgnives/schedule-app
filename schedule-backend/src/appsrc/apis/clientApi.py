@@ -5,12 +5,13 @@ from ..database.models import Client, Test
 class ClientApi(Resource):
     
     def get(self, client_id):
-        # Call method to get client out of DB using client_id
-        return { client_id: "This will be the client info" }
+        client = Client.objects.get(id=client_id).to_json()
+        return Response(client, mimetype="application/json", status=200)
 
     def put(self, client_id):
-        # Call method to update business.
-        return { client_id: 'This will confirm a client update in the DB'}
+        body = request.get_json()
+        Client.objects.get(id=client_id).update(**body)
+        return '', 200
 
 class CreateClientApi(Resource):
     

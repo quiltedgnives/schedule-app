@@ -1,4 +1,5 @@
 from .db import db
+from flask_bcrypt import generate_password_hash, check_password_hash
 
 class Time(db.Document):
     date = db.StringField(required=True)
@@ -25,6 +26,12 @@ class User(db.Document):
     password = db.StringField(min_length=15)
     appointments = db.ListField(db.ReferenceField(Appointment))
 
+    def hash_password(self):
+        self.password = generate_password_hash(self.password).decode('utf8')
+
+    def check_password(self):
+        return check_password_hash(self.password, password)
+
     meta = {'allow_inheritance': True}
 
 class Worker(User):
@@ -42,6 +49,4 @@ class Business(db.Document):
     admin = db.StringField(required=True)
     password = db.StringField(required=True)
 
-class Test(db.Document):
-    string = db.StringField()
 
