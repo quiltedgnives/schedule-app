@@ -22,7 +22,7 @@ const CApptList = ({ appts, setShownAppt}) => (
               <CApptDetails>
                 <List.Content>
                   <Grid.Column>
-                    <List.Header className='blue-txt'>{a.service} appointment with {a.worker} at {a.business_id}</List.Header>
+                    <List.Header className='blue-txt'>{a.service} appointment with {a.worker}</List.Header>
                     <List.Description className='blue-txt'>{moment(a.dateTime).format('h:mm a')} - {moment(a.dateTime).add(1, 'hours').format('h:mm a')}</List.Description>
                   </Grid.Column>
                 </List.Content>
